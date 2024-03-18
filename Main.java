@@ -2,19 +2,40 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Lab 01 POO");
-        // Ejemplo de Scanner
+        Scanner scanner = new Scanner(System.in);
+        int option = 0;
 
-        Scanner sc = new Scanner(System.in); // Instanciación de la clase Scanner
+        do {
+            System.out.println("Calculator Menu:");
+            System.out.println("1. Add");
+            System.out.println("2. Subtract");
+            System.out.println("3. Multiply");
+            System.out.println("4. Divide");
+            System.out.println("5. Exit");
+            System.out.print("Select an option: ");
+            option = scanner.nextInt();
 
-        System.out.println("Your name:");
-        String foo = sc.nextLine(); // Leyendo una línea de texto
-        System.out.println("Your age:");
-        int age = sc.nextInt(); // Leyendo un entero
+            switch (option) {
+                case 1:
+                    Addition(scanner);
+                    break;
+                case 2:
+                    Subtraction(scanner);
+                    break;
+                case 3:
+                    Multiplication(scanner);
+                    break;
+                case 4:
+                    Division(scanner);
+                    break;
+                case 5:
+                    System.out.println("Exit");
+                    break;
+                default:
+                    System.out.println("Invalid choose a valid option");
+                    break;
+            }
+        } while (option != 5);
 
-        System.out.println(foo + " " + age); // Corrected variable name
+        scanner.close();
     }
-}
-
-
-
